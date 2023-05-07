@@ -9,8 +9,9 @@
   },
   "scripts": {
     "start": "node server.js",
-    "dbinit": "npm run db:init",
-    "dbseed": "npm run db:seed"
+    "dbinit": "psql -U postgres -f db/schema.sql",
+    "dbseed": "psql -U postgres -f db/seed.sql"
+
   },
   "name": "back-end",
   "version": "1.0.0",
