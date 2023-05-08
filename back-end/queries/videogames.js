@@ -1,10 +1,10 @@
 const db = require(`../db/dbConfig`)
 
 //index of games
-const getAllVideoGames = async () => {
+const getAllGames = async () => {
     try {
-        const allVideoGames = await db.any(`SELECT * FROM games`)
-        return allVideoGames;
+        const allGames = await db.any(`SELECT * FROM games`)
+        return allGames;
     } catch (error) {
         return error;
     }
@@ -12,10 +12,10 @@ const getAllVideoGames = async () => {
 
 //show a game
 
-const getAVideoGame = async (id) => {
+const getAGame = async (id) => {
     try {
-        const videoGame = await db.one(`SELECT * FROM games WHERE id=$1`, id)
-        return videoGame
+        const game = await db.one(`SELECT * FROM games WHERE id=$1`, id)
+        return game
     } catch (error) {
         return error
     }
@@ -23,10 +23,10 @@ const getAVideoGame = async (id) => {
 
 //create/add a game
 
-const createVideoGame = async (videoGameToAdd) => {
+const createGame = async (gameToAdd) => {
     try {
-        const newVideoGame = await db.one(`INSERT INTO games () VALUES ($1, $2, $3, $4, $5, $6) RETURNING *`, [])
-        return newVideoGame
+        const newGame = await db.one(`INSERT INTO games (rated, title, genre, platform, release_date) VALUES ($1, $2, $3, $4, $5, $6) RETURNING *`, [gameToAdd.rated, gameToAdd.title, gameToAdd.genre, gameToAdd.platform, gameToAdd.release_date])
+        return newGame
     } catch (error) {
         return error
     }
@@ -34,10 +34,10 @@ const createVideoGame = async (videoGameToAdd) => {
 
 //delete game
 
-const deleteVideoGame = async (id) => {
+const deleteGame = async (id) => {
     try {
-        const deletedVideoGame = await db.one(`DELETE FROM games WHERE id=$1 RETURNING *`, id)
-        return deletedVideoGame
+        const deletedGame = await db.one(`DELETE FROM games WHERE id=$1 RETURNING *`, id)
+        return deletedGame
     } catch (error) {
         return error
     }
@@ -45,19 +45,19 @@ const deleteVideoGame = async (id) => {
 
 //update game
 
-const updateVideoGame = async (id, videogame) => {
+const updateGame = async (id, game) => {
     try {
-        const updatedVideoGame = await db.one(`UPDATE games SET =$1, =$2, =$3, =$4, =$5 RETURNING *`, [])
-        return updatedVideoGame
+        const updatedGame = await db.one(`UPDATE games SET rated=$1, title=$2, genre=$3, platform=$4, release_date=$5 WHERE id=$6 RETURNING *`, [game.rated, game.title, game.genre, game.platform, game.release_date, id])
+        return updatedGame
     } catch (error) {
         return error
     }
 }
 
 module.exports = {
-    getAllVideoGames,
-    getAVideoGame,
-    createVideoGame,
-    deleteVideoGame,
-    updateVideoGame
+    getAllGames,
+    getAGame,
+    createGame,
+    deleteGame,
+    updateGame
 }

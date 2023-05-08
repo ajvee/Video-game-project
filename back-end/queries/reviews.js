@@ -2,9 +2,9 @@ const db = require(`../db/dbConfig`);
 
 //index review
 
-const getAllReviews = async (videoGameId) => {
+const getAllReviews = async (gameId) => {
     try {
-        const allReviews = await db.any(`SELECT * FROM reviews WHERE videoGame_id=$1`, videoGameId)
+        const allReviews = await db.any(`SELECT * FROM reviews WHERE game_id=$1`, gameId)
         return allReviews
     } catch (error) {
         return error
@@ -27,7 +27,7 @@ const getAReview = async (id) => {
 
 const createReview = async (reviewToAdd) => {
     try {
-        const newReview = await db.one(`INSERT INTO reviews (videoGame_id, reviewer, title, content, rating) VALUES ($1, $2, $3, $4, $5) RETURNING *`, [reviewToAdd.videoGame_id, reviewToAdd.reviewer, reviewToAdd.title, reviewToAdd.content, reviewToAdd.rating])
+        const newReview = await db.one(`INSERT INTO reviews (game_id, content, title, user_score reviewer) VALUES ($1, $2, $3, $4, $5) RETURNING *`, [reviewToAdd.game_id, reviewToAdd.content, reviewToAdd.title, reviewToAdd.user_score, reviewToAdd.reviewer])
         return newReview
     } catch (error) {
         return error
@@ -49,13 +49,13 @@ const deleteReview = async (id) => {
 
 const updateReview = async (id, review) => {
     try {
-        const updatedReview = await db.one(`UPDATE reviews SET reviewer=$1, title=$2, content=$3, rating=$4, videoGame_id=$5, WHERE id=$6 RETURNING *`, 
+        const updatedReview = await db.one(`UPDATE reviews SET reviewer=$1, title=$2, content=$3, user_score=$4, game_id=$5, WHERE id=$6 RETURNING *`, 
         [
             review.reviewer,
             review.title,
             review.content,
-            review.rating,
-            review.videoGame_id,
+            review.user_score,
+            review.game_id,
             id,
         ])
         return updatedReview
