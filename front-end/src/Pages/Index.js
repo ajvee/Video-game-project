@@ -1,4 +1,5 @@
 import GameIndex from "../Components/GameIndex";
+
 function Index() {
   return (
     <div>
