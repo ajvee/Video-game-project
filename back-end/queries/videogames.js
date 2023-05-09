@@ -3,7 +3,7 @@ const db = require(`../db/dbConfig`)
 //index of games
 const getAllGames = async () => {
     try {
-        const allGames = await db.any(`SELECT * FROM games`)
+        const allGames = await db.any('SELECT * FROM games')
         return allGames;
     } catch (error) {
         return error;
@@ -14,7 +14,7 @@ const getAllGames = async () => {
 
 const getAGame = async (id) => {
     try {
-        const game = await db.one(`SELECT * FROM games WHERE id=$1`, id)
+        const game = await db.one('SELECT * FROM games WHERE id=$1', id)
         return game
     } catch (error) {
         return error
@@ -25,7 +25,7 @@ const getAGame = async (id) => {
 
 const createGame = async (gameToAdd) => {
     try {
-        const newGame = await db.one(`INSERT INTO games (rated, title, genre, platform, release_date) VALUES ($1, $2, $3, $4, $5, $6) RETURNING *`, [gameToAdd.rated, gameToAdd.title, gameToAdd.genre, gameToAdd.platform, gameToAdd.release_date])
+        const newGame = await db.one('INSERT INTO games (rated, title, genre, platform, release_date) VALUES ($1, $2, $3, $4, $5, $6) RETURNING *', [gameToAdd.rated, gameToAdd.title, gameToAdd.genre, gameToAdd.platform, gameToAdd.release_date])
         return newGame
     } catch (error) {
         return error
@@ -36,7 +36,7 @@ const createGame = async (gameToAdd) => {
 
 const deleteGame = async (id) => {
     try {
-        const deletedGame = await db.one(`DELETE FROM games WHERE id=$1 RETURNING *`, id)
+        const deletedGame = await db.one('DELETE FROM games WHERE id=$1 RETURNING *', id)
         return deletedGame
     } catch (error) {
         return error
@@ -47,7 +47,7 @@ const deleteGame = async (id) => {
 
 const updateGame = async (id, game) => {
     try {
-        const updatedGame = await db.one(`UPDATE games SET rated=$1, title=$2, genre=$3, platform=$4, release_date=$5 WHERE id=$6 RETURNING *`, [game.rated, game.title, game.genre, game.platform, game.release_date, id])
+        const updatedGame = await db.one('UPDATE games SET rated=$1, title=$2, genre=$3, platform=$4, release_date=$5 WHERE id=$6 RETURNING *', [game.rated, game.title, game.genre, game.platform, game.release_date, id])
         return updatedGame
     } catch (error) {
         return error
