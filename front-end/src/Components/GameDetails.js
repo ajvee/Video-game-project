@@ -5,7 +5,7 @@ import { Link, useParams, useNavigate } from "react-router-dom"
 
 const API = process.env.REACT_APP_API_URL
 
-function GameDetails() {
+export default function GameDetails() {
 
 const [game, setGame] = useState()
 const {id} = useParams()
