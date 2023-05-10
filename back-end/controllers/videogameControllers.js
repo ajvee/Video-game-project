@@ -2,8 +2,7 @@ const express = require('express');
 const games = express.Router();
 const { getAllGames, getAGame, createGame, deleteGame, updateGame } = require('../queries/videogames')
 const reviewsContoller = require('./reviewsController');
-games.use('/:gamesId/reviews', reviewsContoller);
-// const { checkRequest, valdiateURL, checkId } = require('../validations/checkBookmarks')
+games.use('/:gameId/reviews', reviewsContoller);
 
 games.get('/', async (req,res) => {
      const allGames = await getAllGames();

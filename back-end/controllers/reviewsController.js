@@ -1,9 +1,9 @@
 const express = require('express');
 const reviews = express.Router({mergeParams: true});
 const { getAllReviews, getAReview, createReview, deleteReview, updateReview } = require('../queries/reviews')
+
 // index route
 reviews.get("/", async (req, res) => {
-    //added below line to match frontend.  Two lines below, added bookmarkId to argument (so () to (bookmarkID))
     const { gameId } = req.params;
     try{
         const allReviews = await getAllReviews(gameId)

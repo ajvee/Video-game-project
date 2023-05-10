@@ -1,10 +1,10 @@
-// import VideoGameEditForm from "../Components/VideoGameEditForm"
+import EditGame from "../Components/EditGame"
 
 export default function Edit() {
   return (
     <div>
        <h1>Edit</h1> 
-        {/* <VideoGameEditForm /> */}
+        <EditGame />
     </div>
   )
 }
