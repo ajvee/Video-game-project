@@ -5,15 +5,15 @@ function Nav() {
   return (
     <nav>
       <h1>
-        <Link to="/">The Tuner App</Link>
+        <Link to="/">4 Gamers</Link>
       </h1>
       <ul>
         <li>
-          <Link to="/games">View All Songs</Link>
+          <Link to="/games">View All Video Games</Link>
         </li>
 
         <li>
-          <Link to="/games/review">Add New Song</Link>
+          <Link to="/games/review">Add New Video Games</Link>
         </li>
       </ul>
     </nav>
