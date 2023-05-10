@@ -1,7 +1,7 @@
 import React from 'react'
 import Angel from "./Angel Villa.jpg"
 import Max from "./Max.jpg"
-// import GameDetails from '../Components/GameDetails'
+
 
 
 export default function Home() {
