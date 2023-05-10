@@ -5,7 +5,7 @@ import { Link, useParams, useNavigate } from "react-router-dom"
 
 const API = process.env.REACT_APP_API_URL
 
-export default function GameDetails() {
+function GameDetails() {
 
 const [game, setGame] = useState()
 const {id} = useParams()
@@ -20,7 +20,7 @@ useEffect(() => {
     }).catch((e) => {
         console.warn("catch", e)
     })
-}, [id])
+}, [id,])
 
 //delete func
 const deleteGame = () => {
@@ -42,7 +42,7 @@ const handleDelete = () => {
 //rated, title, genre, platform, release_date
   return (
     <div class="card" style="width:400px">
-    {/* <img class="card-img-top" src="img_avatar1.png" alt="Card image"> */}
+    <img class="card-img-top" src="img_avatar1.png" alt="Card image">
     <div class="card-body">
       <h2 class="card-title"> {game.title} </h2>
       <h4> {game.rated} </h4>
@@ -50,7 +50,7 @@ const handleDelete = () => {
       <h4> {game.platform} </h4>
       <h4> {game.release_date} </h4>
       <p class="card-text">{game.content}</p>
-      {/* <a href="#" class="btn btn-primary">See Profile</a> */}
+      <a href="#" class="btn btn-primary">See Profile</a>
       <div>
         
           <Link to={`/games`} >
@@ -68,10 +68,7 @@ const handleDelete = () => {
           <button onClick={handleDelete}>Delete</button>
         </div>
     </div>
-    
-    {/* <Reviews /> */}
-  </div>
-  )
+    )}
 
-  
-}
+
+export default GameDetails;
