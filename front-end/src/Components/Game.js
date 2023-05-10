@@ -5,19 +5,15 @@ function Game({ game }) {
     <tr>
       <td>{game.id}</td>
       <td>
-        <Link
-          to={`/games/${game.id}`}
-          
+        <Link to={`/games/${game.id}`}
         >
-          {game.name}
+          {game.title}
         </Link>
       </td>
-      <td>{game.artist}</td>
-      <td>{game.album}</td>
-      <td>{game.time}</td>
-      <td>
-        {game.is_favorite ? <span> ⭐️ </span> : <span> &nbsp;&nbsp; </span>}
-      </td>
+      <td>{game.genre}</td>
+      <td>{game.rated}</td>
+      <td>{game.platform}</td>
+      <td>{game.release_date}</td>
     </tr>
   );
 }

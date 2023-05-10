@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-// import "../CSS/Nav.css"
+import "../Css/Nav.css"
 
 function Nav() {
   return (
@@ -13,7 +13,7 @@ function Nav() {
         </li>
 
         <li>
-          <Link to="/games/review">Add New Video Games</Link>
+          <Link to="/games/new">Add New Video Games</Link>
         </li>
       </ul>
     </nav>

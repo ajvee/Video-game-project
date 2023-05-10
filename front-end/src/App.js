@@ -18,9 +18,9 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/games" element={<Index />} />
+          <Route path="/games/new" element={<New />} />
           <Route path="/games/:id" element={<Show />} />
           <Route path="/games/:id/edit" element={<Edit />} />
-          <Route path="/games/new" element={<New />} />
           <Route path="*" element={<FourOFour />} />
         </Routes>
       </main>

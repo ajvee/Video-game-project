@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import Game from "./Game";
-// import "../CSS/Index.css"
+import Footer from "./Footer";
+import "../Css/GameIndex.css"
 
 function Games() {
   const [games, setGames] = useState([]);
@@ -37,8 +38,10 @@ function Games() {
             : null}
         </tbody>
       </table>
+      <Footer />
     </div>
   );
+
 }
 
 export default Games;
