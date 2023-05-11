@@ -42,21 +42,21 @@ const handleDelete = () => {
 
 //rated, title, genre, platform, release_date, content
   return (
-    
-    <article>
+
+    <article className="details">
+        
         {game && (
-            <div>
-             <h2>{game.title} </h2>
+        <div>
+        <h2>{game.title} </h2>
+        <h3> {game.score}</h3>
       <h3>{game.genre}</h3>
       <h4>{game.rated}</h4>
       <h4>{game.platform}</h4>
       <h4>{game.release_date}</h4>
-      <p>{game.content}</p>
+      <p>{game.game_content}</p>
             </div>
         )}
         
-      
-      
       <div className="showNavigation">
 
         <div>
@@ -75,48 +75,43 @@ const handleDelete = () => {
         <div>
           <button onClick={handleDelete}>Delete</button>
         </div>
-
-
         
     </div>
-
-
-
-{/* <Reviews /> */}
- </article>
-  )
-
-  
+ {/* <Reviews />  */}
+  </article> 
+ )
+ 
 }
 
 //BOOTSTRAP?
-// <div class="card" style="width:400px">
-//     {/* <img class="card-img-top" src="img_avatar1.png" alt="Card image"> */}
-//     <div class="card-body">
-//       <h2 class="card-title"> {game.title} </h2>
-//       <h4> {game.rated} </h4>
-//       <h4>{game.genre} </h4>
-//       <h4> {game.platform} </h4>
-//       <h4> {game.release_date} </h4>
-//       <p class="card-text">{game.content}</p>
-//       {/* <a href="#" class="btn btn-primary">See Profile</a> */}
-//       <div>
+/* <div class="card" style="width:400px"  >
+    {/* <img class="card-img-top" src="img_avatar1.png" alt="Card image"> */
+    // <div class="card-body">
+    //   <h2 class="card-title"> {game.title} </h2>
+    //   <h3> {game.score}</h3>
+    //   <h4> {game.rated} </h4>
+    //   <h4>{game.genre} </h4>
+    //   <h4> {game.platform} </h4>
+    //   <h4> {game.release_date} </h4>
+    //   <p class="card-text">{game.game_content}</p> 
+      /* <a href="#" class="btn btn-primary">See Profile</a> */
+      /* <div>
         
-//           <Link to={`/games`} >
-//           <button>Back</button>
-//           </Link>
-//         </div>
+          <Link to={`/games`} >
+          <button>Back</button>
+          </Link>
+        </div>
 
-//         <div>
-//           <Link to={`/games/${id}/edit`}>
-//           <button>Edit</button>
-//           </Link>
-//         </div>
+        <div>
+          <Link to={`/games/${id}/edit`}>
+          <button>Edit</button>
+          </Link>
+        </div>
 
-//         <div>
-//           <button onClick={handleDelete}>Delete</button>
-//         </div>
-//     </div>
+        <div>
+          <button onClick={handleDelete}>Delete</button>
+        </div>
+    </div> */
     
-//     {/* <Reviews /> */}
-//   </div>
+    /* <Reviews /> */
+  /* </div> */
