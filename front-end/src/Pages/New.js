@@ -1,4 +1,4 @@
-import UpdateGame from "../Components/GameNew";
+import GameNew from "../Components/GameNew";
 
 function New() {
   return (
