@@ -21,7 +21,7 @@ useEffect(() => {
     }).catch((e) => {
         console.warn("catch", e)
     })
-}, [id])
+}, [id,])
 
 //delete func
 const deleteGame = () => {

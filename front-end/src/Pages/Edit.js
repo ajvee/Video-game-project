@@ -1,4 +1,4 @@
-import EditGame from "../Components/EditGame"
+import EditGame from "../Components/GameEdit"
 
 export default function Edit() {
   return (
