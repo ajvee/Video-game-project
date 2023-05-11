@@ -107,7 +107,7 @@ const handleSubmit = (event) => {
 
 
   <div class="form-group">
-    <label for="game_content">Game Content: </label>
+    <label for="game_content">Game Review: </label>
     <input 
     id="game_content" 
     type="text" 
