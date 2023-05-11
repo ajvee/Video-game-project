@@ -10,7 +10,9 @@ CREATE TABLE games (
     title VARCHAR,
     genre TEXT,
     platform VARCHAR,
-    release_date INTEGER
+    release_date INTEGER,
+    game_content VARCHAR,
+    score INTEGER
 );
 
 DROP TABLE IF EXISTS reviews;
