@@ -6,7 +6,7 @@ function Nav() {
     <nav className="navbar">
       <ul>
         <li>
-          <Link to="/">4 Gamers</Link>
+          <Link to="/home">4 Gamers</Link>
         </li>
 
         <li>

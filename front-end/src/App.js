@@ -16,7 +16,7 @@ function App() {
       <Nav />
       <main>
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/home" element={<Home />} />
           <Route path="/games" element={<Index />} />
           <Route path="/games/new" element={<New />} />
           <Route path="/games/:id" element={<Show />} />

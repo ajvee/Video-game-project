@@ -28,6 +28,7 @@ function Games() {
             <th className="Games-header">Rated</th>
             <th className="Games-header">Platform</th>
             <th className="Games-header">Release Date</th>
+            <th className="Games-header">Critics Score</th>
           </tr>
         </thead>
         <tbody>
