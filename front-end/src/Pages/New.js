@@ -1,10 +1,10 @@
-import UpdateGame from "../Components/UpdateGame";
+import UpdateGame from "../Components/GameNew";
 
 function New() {
   return (
     <div>
       <h1>Add New Video Game</h1>
-      <UpdateGame />
+      <GameNew />
     </div>
   );
 }
