@@ -44,17 +44,7 @@ const handleSubmit = (event) => {
     })
 }
 
-// function getColor(score) {
-//     let color = "";
-//     if (score > 75) {
-//       color = "green";
-//     } else if (score >= 60 && score <= 75) {
-//       color = "yellow";
-//     } else {
-//       color = "red";
-//     }
-//     return color;
-//   }
+
 
 
 console.log(props.review)
