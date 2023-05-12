@@ -60,91 +60,91 @@ const handleSubmit = (event) => {
 
 
       <form onSubmit={handleSubmit}>
-  <div class="form-group">
-    <label for="title">Title: </label>
+  <div className="form-group">
+    <label htmlFor="title">Title: </label>
     <input 
     id="title" 
     type="text" 
     value={game.title} 
     onChange={handleTextChange} 
-    class="form-control" 
+    className="form-control" 
     required
     />
 
 
   </div>
-  <div class="form-group">
-    <label for="rated">Rated: </label>
+  <div className="form-group">
+    <label htmlFor="rated">Rated: </label>
     <input   
     id="rated" 
     type="text" 
     value={game.rated} 
     onChange={handleTextChange} 
-    class="form-control" 
+    className="form-control" 
     required
     />
   </div>
 
-  <div class="form-group">
-    <label for="genre">Genre: </label>
+  <div className="form-group">
+    <label htmlFor="genre">Genre: </label>
     <input 
     id="genre" 
     type="text" 
     value={game.genre} 
     onChange={handleTextChange} 
-    class="form-control" 
+    className="form-control" 
     required
     />
   </div>
 
 
-  <div class="form-group">
-    <label for="platform">Platform: </label>
+  <div className="form-group">
+    <label htmlFor="platform">Platform: </label>
     <input 
     id="platform" 
     type="text" 
     value={game.platform} 
     onChange={handleTextChange} 
-    class="form-control" 
+    className="form-control" 
     required
     />
   </div>
 
 
-  <div class="form-group">
-    <label for="release_date">Release Date: </label>
+  <div className="form-group">
+    <label htmlFor="release_date">Release Date: </label>
     <input 
     id="release_date" 
     type="text" 
     value={game.release_date} 
     onChange={handleTextChange} 
-    class="form-control" 
+    className="form-control" 
     required
     />
   </div>
 
 
-  <div class="form-group">
-    <label for="game_content">Game Content: </label>
+  <div className="form-group">
+    <label htmlFor="game_content">Game Content: </label>
     <input 
     id="game_content" 
     type="text" 
     value={game.game_content} 
     onChange={handleTextChange} 
-    class="form-control" 
+    className="form-control" 
     required
     />
   </div>
 
 
-  <div class="form-group">
-    <label for="score">Score: </label>
+  <div className="form-group">
+    <label htmlFor="score">Score: </label>
     <input 
     id="score" 
     type="number" 
     value={game.score} 
     onChange={handleTextChange} 
-    class="form-control" 
+    className="form-control" 
     required
     />
   </div>

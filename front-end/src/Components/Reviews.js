@@ -42,7 +42,7 @@ export default function Reviews() {
             .catch((err) => console.warn("catch", err))
     };
 
-    const handleEdit = (updatedReview) => {
+    const handleEdit = (updatedReview, id) => {
         axios.put(`${API}/games/${id}/reviews/${updatedReview.id}`, updatedReview)
             .then((res) => {
                 const copyReviewArray = [...reviews];

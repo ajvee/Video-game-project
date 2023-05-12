@@ -44,16 +44,27 @@ const handleSubmit = (event) => {
     })
 }
 
+// function getColor(score) {
+//     let color = "";
+//     if (score > 75) {
+//       color = "green";
+//     } else if (score >= 60 && score <= 75) {
+//       color = "yellow";
+//     } else {
+//       color = "red";
+//     }
+//     return color;
+//   }
 
 
+console.log(props.review)
   return (
-    <>
+    // <>
     <div>
-
     {props.children}
-        <form onSubmit={handleSubmit}/>
-  <div class="form-group">
-    <label for="reviewer">Name: </label>
+  <form onSubmit={handleSubmit}>
+      <div class="form-group">
+    <label htmlfor="reviewer">Name: </label>
     <input 
     id="reviewer" 
     type="text" 
@@ -62,10 +73,10 @@ const handleSubmit = (event) => {
     class="form-control" 
     required
     />
-  </div>
+    </div>
 
-  <div class="form-group">
-    <label for="title">Title: </label>
+    <div class="form-group">
+    <label htmlfor="title">Title: </label>
     <input 
     id="title" 
     type="text" 
@@ -74,10 +85,10 @@ const handleSubmit = (event) => {
     class="form-control" 
     required
     />
-  </div>
+    </div>
 
-  <div class="form-group">
-    <label for="user_score">Score: </label>
+    <div class="form-group">
+    <label htmlfor="user_score">Score: </label>
     <input 
     id="user_score" 
     type="number" 
@@ -93,7 +104,7 @@ const handleSubmit = (event) => {
   </div>
 
   <div class="form-group">
-    <label for="content">Review: </label>
+    <label htmlfor="content">Review: </label>
     <input 
     id="content" 
     type="text" 
@@ -105,7 +116,8 @@ const handleSubmit = (event) => {
   </div>
   
   <input type="submit" />
+    </form>
     </div>
-    </>
+    // </>
   )
 }
