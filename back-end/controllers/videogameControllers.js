@@ -56,7 +56,7 @@ games.put('/:id', async (req, res) => {
 
     try {
        const updatedGame = await updateGame(id, body);
-       res.status(200).json(updatedBookmark);
+       res.status(200).json(updatedGame);
     } catch (error) {
         res.status(400).json({ error: error});
     };
