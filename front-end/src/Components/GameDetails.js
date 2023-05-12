@@ -40,6 +40,18 @@ const handleDelete = () => {
 }
 
 
+function getColor(score) {
+  let color = "";
+  if (score > 75) {
+    color = "green";
+  } else if (score >= 60 && score <= 75) {
+    color = "yellow";
+  } else {
+    color = "red";
+  }
+  return color;
+}
+
 //rated, title, genre, platform, release_date, content
   return (
 
@@ -48,11 +60,13 @@ const handleDelete = () => {
         {game && (
         <div>
         <h2>{game.title} </h2>
-        <h3> {game.score}</h3>
-      <h3>{game.genre}</h3>
-      <h4>{game.rated}</h4>
-      <h4>{game.platform}</h4>
-      <h4>{game.release_date}</h4>
+        <br></br>
+        <h3>MetaScore - <span style={{ color: getColor(game.score) }}>{game.score}</span></h3>
+      <h4>Genre: {game.genre}</h4>
+      <h4>Rated: {game.rated}</h4>
+      <h4>Platform: {game.platform}</h4>
+      <h4>Released in: {game.release_date}</h4>
+      <br></br>
       <p>{game.game_content}</p>
             </div>
         )}
