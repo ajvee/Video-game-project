@@ -25,9 +25,10 @@ function Games() {
             <th className="Games-header">#</th>
             <th className="Games-header">Title</th>
             <th className="Games-header">Genre</th>
-            <th className="Games-header">Rated</th>
+            <th className="Games-header">ESRB Rating</th>
             <th className="Games-header">Platform</th>
-            <th className="Games-header">Release Date</th>
+            <th className="Games-header">Year Released</th>
+            <th className="Games-header">Game Score</th>
           </tr>
         </thead>
         <tbody>

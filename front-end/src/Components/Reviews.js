@@ -16,7 +16,7 @@ export default function Reviews() {
                 setReviews(res.data);
                 console.log(res);
             })
-    }, [id, API]);
+    }, [id,]);
 
     const handleAdd = (newReview) => {
         axios.post(`${API}/games/${id}/reviews`, newReview)
