@@ -49,7 +49,7 @@ const deleteReview = async (id) => {
 
 const updateReview = async (id, review) => {
     try {
-        const updatedReview = await db.one('UPDATE reviews SET reviewer=$1, title=$2, content=$3, user_score=$4, game_id=$5, WHERE id=$6 RETURNING *', 
+        const updatedReview = await db.one('UPDATE reviews SET reviewer=$1, title=$2, content=$3, user_score=$4, game_id=$5 WHERE id=$6 RETURNING *', 
         [
             review.reviewer,
             review.title,

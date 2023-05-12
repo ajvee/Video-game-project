@@ -48,7 +48,8 @@ reviews.put("/:id", async (req, res) => {
     const { id } = req.params;
     //to update we need to know which one "id", and what we are inserting
     const updatedReview = await updateReview(id, req.body);
-    if (updatedReview.id) {
+    console.log(updatedReview)
+    if (updatedReview) {
       res.status(200).json(updatedReview);
     } else {
       res.status(404).json("Review not found");
