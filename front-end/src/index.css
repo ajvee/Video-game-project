@@ -48,3 +48,31 @@ td.score {
 td.genre {
     text-align: center;
 }
+
+button {
+    background-color: coral;
+    border-radius: 15px;
+    color:blueviolet;
+    font-size: large;
+    font-weight: 500;
+}
+
+input {
+    background-color: coral;
+    border-radius: 15px;
+    color:blueviolet;
+    font-size: large;
+    font-weight: 500;
+}
+
+button:hover {
+background-color: plum;
+}
+
+input:hover {
+background-color: plum;
+}
+
+div.edit {
+    margin-top: 100px;
+}
