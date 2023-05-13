@@ -31,7 +31,9 @@ const deleteGame = () => {
      (error) => console.error(error)
     )
     .catch((c) => console.warn("catch", c))
+  
 }
+
 
 //handling the delete
 const handleDelete = () => {

@@ -6,7 +6,8 @@ import ReviewForm from "./ReviewForm";
 
 const API = process.env.REACT_APP_API_URL;
 
-export default function Reviews({}) {
+export default function Reviews() {
+    const [showAddReview, setShowAddReview] = useState(false);
     const [reviews, setReviews] = useState([]);
     const { id } = useParams();
 
@@ -16,7 +17,11 @@ export default function Reviews({}) {
                 setReviews(res.data);
                 console.log(res);
             })
-    }, [id, API]);
+    }, [id]);
+
+    const handleClick = () => {
+        setShowAddReview(!showAddReview);
+      };
 
     const handleAdd = (newReview) => {
         axios.post(`${API}/games/${id}/reviews`, newReview)
@@ -56,23 +61,28 @@ export default function Reviews({}) {
             })
             .catch((err) => console.warn("catch", err))
     };
+    
 
 
     return (
         
         <section className="Reviews">
             <br></br>
-            <h2>Reviews</h2>
-            <ReviewForm handleAdd={handleAdd}>
-                <h3>Add a New Review</h3>
-            </ReviewForm>
+            <button onClick={handleClick}>
+          {showAddReview ? "Hide Form" : "Add New Review"}
+        </button>
+        {showAddReview && (
+          <ReviewForm handleAdd={handleAdd}>
+            <h5>Add a New Review</h5>
+          </ReviewForm>
+        )}
             {
                 reviews.map((review) => {
                     return <Review
                         key={review.id}
                         review={review}
                         handleDelete={handleDelete}
-                        handleEdit={handleEdit} />
+                        handleSubmit={handleEdit} />
                 })
             }
         </section>
