@@ -1,37 +1,36 @@
 const express = require('express');
-const bookmark = express.Router();
-const { getAllBookmarks, getABookmark, createBookmark, deleteBookmark, updateBookmark } = require('../queries/videogames')
+const games = express.Router();
+const { getAllGames, getAGame, createGame, deleteGame, updateGame } = require('../queries/videogames')
 const reviewsContoller = require('./reviewsController');
-bookmark.use('/:bookmarkId/reviews', reviewsContoller);
-// const { checkRequest, valdiateURL, checkId } = require('../validations/checkBookmarks')
+games.use('/:gameId/reviews', reviewsContoller);
 
-bookmark.get('/', async (req,res) => {
-     const allBookmarks = await getAllBookmarks();
+games.get('/', async (req,res) => {
+     const allGames = await getAllGames();
 
-     if (allBookmarks) {
-        res.status(202).json(allBookmarks);
+     if (allGames) {
+        res.status(202).json(allGames);
      } else {
         res.status(500).json({ error: 'Server Error' })
      }
 });
 
-bookmark.get('/:id', async (req,res) => {
+games.get('/:id', async (req,res) => {
     const { id } = req.params;
-    const bookmark = await getABookmark(id)
+    const game = await getAGame(id)
 
-    if (bookmark) {
-        res.status(200).json(bookmark);
+    if (game) {
+        res.status(200).json(game);
     } else {
         res.status(500).json({ error: 'Server Error'})
     }
 })
 
 // create route 
-bookmark.post('/', async (req, res) => {
-    const newBookmark = req.body;
+games.post('/', async (req, res) => {
+    const newGame = req.body;
     try {
-        const addedBookmark =  await createBookmark(newBookmark)
-        res.status(202).json(addedBookmark)
+        const addedGame =  await createGame(newGame)
+        res.status(202).json(addedGame)
     } catch (error) {
         res.status(400).json({ error: error })
     }
@@ -39,29 +38,29 @@ bookmark.post('/', async (req, res) => {
 
 // delete route
 
-bookmark.delete('/:id', async (req, res) => {
+games.delete('/:id', async (req, res) => {
     const { id } = req.params;
 
     try {
-        const deletedBookmark = await deleteBookmark(id);
-        res.status(200).json(deletedBookmark)
+        const deletedGame = await deleteGame(id);
+        res.status(200).json(deletedGame)
     } catch (error) {
         res.status(400).json({ error: error })
     }
 });
 
 //update route 
-bookmark.put('/:id', async (req, res) => {
+games.put('/:id', async (req, res) => {
     const { id } = req.params;
     const { body } = req;
 
     try {
-       const updatedBookmark = await updateBookmark(id, body);
-       res.status(200).json(updatedBookmark);
+       const updatedGame = await updateGame(id, body);
+       res.status(200).json(updatedGame);
     } catch (error) {
         res.status(400).json({ error: error});
     };
 });
 
 
-module.exports = bookmark;
+module.exports = games;

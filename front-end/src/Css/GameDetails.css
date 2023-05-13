@@ -1,0 +1,13 @@
+div.details {
+    margin-top: 100px;
+
+
+}
+
+a.details {
+    color: coral
+}
+
+div.showNavigation button{
+justify-content: space-around;
+}

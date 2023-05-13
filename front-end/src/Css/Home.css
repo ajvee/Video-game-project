@@ -1,0 +1,46 @@
+div.home {
+    margin-top: 100px;
+}
+
+body {
+    color: greenyellow
+}
+.home a {
+    text-decoration: none;
+    color: coral
+}
+
+div.home h1 {
+    text-align: center;
+}
+
+div.max {
+    padding-top: 50px;
+    margin-left: 750px;
+
+}
+
+div.max a{
+    margin-right: 10px;
+}
+
+div.max img {
+    border-radius: 10px;
+    margin-right: 25px
+}
+
+div.angel {
+    padding-top: 50px;
+    margin-left: 750px;
+}
+
+div.angel img {
+    border-radius: 10px;
+    margin-right: 25px
+}
+
+a:hover {
+    color: purple
+}
+
+
