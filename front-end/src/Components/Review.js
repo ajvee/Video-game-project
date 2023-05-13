@@ -4,16 +4,15 @@ import ReviewForm from "./ReviewForm";
 
 function getColor(score) {
     let color = "";
-    if (score > 75) {
+    if (score > 81) {
       color = "green";
-    } else if (score >= 60 && score <= 75) {
+    } else if (score >= 60 && score <= 80) {
       color = "yellow";
     } else {
       color = "red";
     }
     return color;
-  }
-
+}
   
 export default function Review({ review, handleDelete, handleEdit }) {
     const [viewEditFrom, toggleEditForm] = useState(false);
@@ -26,6 +25,7 @@ export default function Review({ review, handleDelete, handleEdit }) {
 
     return (
         <div className="Review">
+            
             <br></br>
             <br></br>
             <button onClick={toggleView}>Edit this review...</button>

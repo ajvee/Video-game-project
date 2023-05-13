@@ -42,13 +42,14 @@ const handleSubmit = (event) => {
   return (
     <div>
          <form onSubmit={handleSubmit}>
-  <div class="form-group">
+  <div class="form-group1">
     <label for="title">Title: </label>
     <input 
     id="title" 
     type="text" 
     value={game.title} 
     onChange={handleTextChange} 
+    placeholder=""
     class="form-control" 
     required
     />
@@ -62,6 +63,7 @@ const handleSubmit = (event) => {
     type="text" 
     value={game.rated} 
     onChange={handleTextChange} 
+    placeholder=""
     class="form-control" 
     required
     />
@@ -74,6 +76,7 @@ const handleSubmit = (event) => {
     type="text" 
     value={game.genre} 
     onChange={handleTextChange} 
+    placeholder=""
     class="form-control" 
     required
     />
@@ -87,6 +90,7 @@ const handleSubmit = (event) => {
     type="text" 
     value={game.platform} 
     onChange={handleTextChange} 
+    placeholder=""
     class="form-control" 
     required
     />
@@ -99,7 +103,8 @@ const handleSubmit = (event) => {
     id="release_date" 
     type="text" 
     value={game.release_date} 
-    onChange={handleTextChange} 
+    onChange={handleTextChange}
+    placeholder="" 
     class="form-control" 
     required
     />

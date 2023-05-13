@@ -55,6 +55,7 @@ const handleSubmit = (event) => {
     type="text" 
     value={review.reviewer} 
     onChange={handleTextChange} 
+    placeholder="Your name"
     class="form-control" 
     required
     />
@@ -67,6 +68,7 @@ const handleSubmit = (event) => {
     type="text" 
     value={review.title} 
     onChange={handleTextChange} 
+    placeholder="Name of game"
     class="form-control" 
     required
     />
@@ -95,6 +97,7 @@ const handleSubmit = (event) => {
     type="text" 
     value={review.content} 
     onChange={handleTextChange} 
+    placeholder="Your thoughts"
     class="form-control" 
     required
     />
