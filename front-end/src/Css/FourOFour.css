@@ -1,0 +1,20 @@
+.container-two {
+    background-image: url('/Users/angelvilla/Documents/Module-4/video-game-project/Fullstack/front-end/src/Css/Mario-error.jpeg');
+    background-size: cover;
+    background-position: center bottom;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+  
+  .back-home {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+  

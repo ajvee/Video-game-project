@@ -3,54 +3,49 @@ import { useParams } from "react-router-dom"
 
 
 export default function ReviewForm(props) {
-const {id} = useParams()
-const {reviewDetails} = props
+const {reviewDetails} = props;
+const { id } = useParams();
+
 
 const [review, setReview] = useState({
-    id: "",
+    // id: "",
     content: "",
     title: "",
     user_score: "",
     reviewer: "" ,
-    game_id: id,
+    game_id: id
 })
+
+useEffect(() => {
+  if (reviewDetails){
+      setReview(reviewDetails)
+  }
+}, [id, reviewDetails, props])
 
 const handleTextChange = (event) => {
     setReview({...review, [event.target.id]: event.target.value})
 }
 
-useEffect(() => {
-    if (reviewDetails){
-        setReview(reviewDetails)
-    }
-}, [id, reviewDetails, props])
-
-
 const handleSubmit = (event) => {
     event.preventDefault()
-    props.handleEdit(review, id)
-
+    props.handleEdit(review, id);
     if (reviewDetails) {
-        //toggles the edit
         props.toggleView()
     }
     setReview({
-    id: "",
+    // id: "",
     content: "",
     title: "",
     user_score: "",
-    reviewer: "" ,
+    reviewer: "",
     game_id: id,
     })
 }
 
-
-
-
-console.log(props.review)
+// console.log(props.review)
   return (
-    // <>
-    <div>
+
+<div>
     {props.children}
   <form onSubmit={handleSubmit}>
       <div class="form-group">
@@ -111,6 +106,5 @@ console.log(props.review)
   <input type="submit" />
     </form>
     </div>
-    // </>
   )
 }

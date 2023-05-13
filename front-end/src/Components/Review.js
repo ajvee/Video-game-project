@@ -1,7 +1,6 @@
 import { useState } from "react";
 import ReviewForm from "./ReviewForm";
 
-
 function getColor(score) {
     let color = "";
     if (score > 81) {
@@ -20,6 +19,8 @@ export default function Review({ review, handleDelete, handleEdit }) {
     const toggleView = () => {
         toggleEditForm(!viewEditFrom);
     };
+
+    
 
     return (
         <div className="Review">
@@ -45,3 +46,4 @@ export default function Review({ review, handleDelete, handleEdit }) {
         </div>
     )
 };
+

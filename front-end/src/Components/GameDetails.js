@@ -7,7 +7,7 @@ const API = process.env.REACT_APP_API_URL
 
 export default function GameDetails() {
 
-const [game, setGame] = useState()
+const [game, setGame] = useState([])
 const {id} = useParams()
 let navigate = useNavigate()
 
@@ -16,7 +16,6 @@ useEffect(() => {
     axios
     .get(`${API}/games/${id}`)
     .then((response) => {
-        // console.log(response.data)
         setGame(response.data)
     }).catch((e) => {
         console.warn("catch", e)
@@ -32,7 +31,9 @@ const deleteGame = () => {
      (error) => console.error(error)
     )
     .catch((c) => console.warn("catch", c))
+  
 }
+
 
 //handling the delete
 const handleDelete = () => {
@@ -61,7 +62,7 @@ function getColor(score) {
         <div className="details">
         <h2>{game.title} </h2>
         <br></br>
-        <h3>MetaScore - <span style={{ color: getColor(game.score) }}>{game.score}</span></h3>
+        <h3>MetaScore: <span style={{ color: getColor(game.score) }}>{game.score}</span></h3>
       <h4>Genre: {game.genre}</h4>
       <h4>Rated: {game.rated}</h4>
       <h4>Platform: {game.platform}</h4>
