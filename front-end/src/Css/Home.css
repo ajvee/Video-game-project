@@ -15,8 +15,12 @@ div.home h1 {
 }
 
 div.max {
-    padding-top: 50px;
-    margin-left: 750px;
+    
+position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-top: -200px;
+  margin-left: -100px;
 
 }
 
@@ -30,8 +34,11 @@ div.max img {
 }
 
 div.angel {
-    padding-top: 50px;
-    margin-left: 750px;
+    position: fixed;
+    top: 75%;
+    left: 50%;
+    margin-top: -150px;
+    margin-left: -100px;
 }
 
 div.angel img {
@@ -41,6 +48,15 @@ div.angel img {
 
 a:hover {
     color: purple
+}
+a.git {
+    font-weight: bolder;
+    font-size: larger;
+}
+
+a.linked {
+    font-weight: bolder;
+    font-size: larger;
 }
 
 

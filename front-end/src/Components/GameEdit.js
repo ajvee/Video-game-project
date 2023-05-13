@@ -50,12 +50,25 @@ const handleSubmit = (event) => {
 }
 
 
+function getColor(score) {
+  let color = "";
+  if (score > 81) {
+    color = "green";
+  } else if (score >= 60 && score <= 80) {
+    color = "yellow";
+  } else {
+    color = "red";
+  }
+  return color;
+}
+
+
   return (
 
     <>
-    <div>
+    <div className="edit">
         <h1> {game.title}</h1>
-         <h1> {game.score} </h1> 
+         <h1> <span style={{ color: getColor(game.score) }}>{game.score}</span> </h1> 
     </div>
 
 
