@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom"
 
 
 export default function ReviewForm(props) {
-const {id} = useParams()
+const { id } = useParams()
 const {reviewDetails} = props
 
 const [review, setReview] = useState({
@@ -28,10 +28,8 @@ useEffect(() => {
 
 const handleSubmit = (event) => {
     event.preventDefault()
-    props.handleEdit(review, id)
-
+    props.handleEdit(review,id)
     if (reviewDetails) {
-        //toggles the edit
         props.toggleView()
     }
     setReview({
@@ -44,13 +42,10 @@ const handleSubmit = (event) => {
     })
 }
 
-
-
-
-console.log(props.review)
+// console.log(props.review)
   return (
-    // <>
-    <div>
+
+<div>
     {props.children}
   <form onSubmit={handleSubmit}>
       <div class="form-group">
@@ -108,6 +103,5 @@ console.log(props.review)
   <input type="submit" />
     </form>
     </div>
-    // </>
   )
 }

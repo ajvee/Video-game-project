@@ -6,7 +6,7 @@ import ReviewForm from "./ReviewForm";
 
 const API = process.env.REACT_APP_API_URL;
 
-export default function Reviews() {
+export default function Reviews({}) {
     const [reviews, setReviews] = useState([]);
     const { id } = useParams();
 
@@ -16,7 +16,7 @@ export default function Reviews() {
                 setReviews(res.data);
                 console.log(res);
             })
-    }, [id,]);
+    }, [id, API]);
 
     const handleAdd = (newReview) => {
         axios.post(`${API}/games/${id}/reviews`, newReview)
@@ -42,7 +42,7 @@ export default function Reviews() {
             .catch((err) => console.warn("catch", err))
     };
 
-    const handleEdit = (updatedReview, id) => {
+    const handleEdit = (updatedReview) => {
         axios.put(`${API}/games/${id}/reviews/${updatedReview.id}`, updatedReview)
             .then((res) => {
                 const copyReviewArray = [...reviews];
