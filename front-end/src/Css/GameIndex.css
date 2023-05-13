@@ -77,3 +77,11 @@
   margin-bottom: 0.5rem;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
 }
+
+.Game a {
+  color: purple;
+  text-decoration: none;
+}
+.Game a:hover {
+  color: blue
+}

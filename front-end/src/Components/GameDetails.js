@@ -42,9 +42,9 @@ const handleDelete = () => {
 
 function getColor(score) {
   let color = "";
-  if (score > 75) {
+  if (score > 81) {
     color = "green";
-  } else if (score >= 60 && score <= 75) {
+  } else if (score >= 60 && score <= 80) {
     color = "yellow";
   } else {
     color = "red";
@@ -58,7 +58,7 @@ function getColor(score) {
     <article className="details">
         
         {game && (
-        <div>
+        <div className="details">
         <h2>{game.title} </h2>
         <br></br>
         <h3>MetaScore - <span style={{ color: getColor(game.score) }}>{game.score}</span></h3>
@@ -77,17 +77,21 @@ function getColor(score) {
           {" "}
           <Link to={`/games`} >
           <button>Back</button>
-          </Link>
-        </div>
-
-        <div>
-          <Link to={`/games/${id}/edit`}>
+          </Link> 
+          
+           <Link to={`/games/${id}/edit`}>
           <button>Edit</button>
           </Link>
+
+          <button onClick={handleDelete}>Delete</button>
         </div>
 
         <div>
-          <button onClick={handleDelete}>Delete</button>
+        
+        </div>
+
+        <div>
+          
         </div>
         
     </div>
