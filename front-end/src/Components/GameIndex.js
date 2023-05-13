@@ -22,7 +22,7 @@ function Games() {
       <table className="Games">
         <thead>
           <tr>
-            <th className="Games-header">#</th>
+            <th className="Games-header">Score</th>
             <th className="Games-header">Title</th>
             <th className="Games-header">Genre</th>
             <th className="Games-header">Rated</th>

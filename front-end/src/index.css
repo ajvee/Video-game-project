@@ -21,3 +21,30 @@ th.Games-header {
 div.form-group1 {
 margin-top: 100px;
 }
+
+nav.navbar {
+    justify-content: center;
+}
+
+td.rated {
+    text-align: center;
+}
+
+td.date {
+    text-align: center;
+}
+
+td.platform {
+    text-align: center;
+}
+td.title {
+    text-align: center;
+}
+
+td.score {
+    text-align: center;
+}
+
+td.genre {
+    text-align: center;
+}
