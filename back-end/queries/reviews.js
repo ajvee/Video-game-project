@@ -27,7 +27,7 @@ const getAReview = async (id) => {
 
 const createReview = async (reviewToAdd) => {
     try {
-        const newReview = await db.one('INSERT INTO reviews (game_id, content, title, user_score reviewer) VALUES ($1, $2, $3, $4, $5) RETURNING *', [reviewToAdd.game_id, reviewToAdd.content, reviewToAdd.title, reviewToAdd.user_score, reviewToAdd.reviewer])
+        const newReview = await db.one('INSERT INTO reviews (game_id, content, title, user_score, reviewer) VALUES ($1, $2, $3, $4, $5) RETURNING *', [reviewToAdd.game_id, reviewToAdd.content, reviewToAdd.title, reviewToAdd.user_score, reviewToAdd.reviewer])
         return newReview
     } catch (error) {
         return error
