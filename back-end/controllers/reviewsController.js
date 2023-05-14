@@ -24,10 +24,8 @@ reviews.get('/:id', async (req, res) => {
 });
 // create route
 reviews.post('/',  async (req, res) => {
-    const newReview = req.body;
-    // const { body } = req;
     try {
-        const addedReview = await createReview(newReview)
+        const addedReview = await createReview(req.body)
         res.status(200).json(addedReview)
     } catch (error) {
         res.status(400).json({ error: error})
@@ -46,13 +44,12 @@ reviews.delete('/:id', async (req, res) => {
 // update route
 reviews.put("/:id", async (req, res) => {
     const { id } = req.params;
-    //to update we need to know which one "id", and what we are inserting
     const updatedReview = await updateReview(id, req.body);
-    console.log(updatedReview)
-    if (updatedReview) {
+    if (updatedReview.id) {
       res.status(200).json(updatedReview);
     } else {
       res.status(404).json("Review not found");
     }
   });
+
 module.exports = reviews;

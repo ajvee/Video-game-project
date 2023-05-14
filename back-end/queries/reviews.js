@@ -1,6 +1,5 @@
 const db = require(`../db/dbConfig`);
 
-//index review
 
 const getAllReviews = async (gameId) => {
     try {
@@ -27,7 +26,7 @@ const getAReview = async (id) => {
 
 const createReview = async (reviewToAdd) => {
     try {
-        const newReview = await db.one('INSERT INTO reviews (game_id, content, title, user_score, reviewer) VALUES ($1, $2, $3, $4, $5) RETURNING *', [reviewToAdd.game_id, reviewToAdd.content, reviewToAdd.title, reviewToAdd.user_score, reviewToAdd.reviewer])
+        const newReview = await db.one('INSERT INTO reviews (content, title, user_score, reviewer, game_id) VALUES ($1, $2, $3, $4, $5) RETURNING *', [reviewToAdd.content, reviewToAdd.title, reviewToAdd.user_score, reviewToAdd.reviewer,reviewToAdd.game_id])
         return newReview
     } catch (error) {
         return error
@@ -70,5 +69,4 @@ module.exports = {
     createReview,
     deleteReview,
     updateReview,
-    deleteReview
 };
