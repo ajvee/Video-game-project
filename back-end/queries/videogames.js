@@ -25,7 +25,7 @@ const getAGame = async (id) => {
 
 const createGame = async (gameToAdd) => {
     try {
-        const newGame = await db.one('INSERT INTO games (rated, title, genre, platform, release_date, game_content, score ) VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING *', [gameToAdd.rated, gameToAdd.title, gameToAdd.genre, gameToAdd.platform, gameToAdd.release_date, gameToAdd.game_content, gameToAdd.score])
+        const newGame = await db.one('INSERT INTO games (img, rated, title, genre, platform, release_date, game_content, score ) VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING *', [gameToAdd.img, gameToAdd.rated, gameToAdd.title, gameToAdd.genre, gameToAdd.platform, gameToAdd.release_date, gameToAdd.game_content, gameToAdd.score])
         return newGame
     } catch (error) {
         return error
@@ -47,7 +47,7 @@ const deleteGame = async (id) => {
 
 const updateGame = async (id, game) => {
     try {
-        const updatedGame = await db.one('UPDATE games SET rated=$1, title=$2, genre=$3, platform=$4, release_date=$5, game_content=$6, score=$7 WHERE id=$8 RETURNING *', [game.rated, game.title, game.genre, game.platform, game.release_date, game.game_content, game.score, id])
+        const updatedGame = await db.one('UPDATE games SET img= $1 rated=$2, title=$3, genre=$4, platform=$5, release_date=$6, game_content=$7, score=$8 WHERE id=$9 RETURNING *', [game.img, game.rated, game.title, game.genre, game.platform, game.release_date, game.game_content, game.score, id])
         return updatedGame
     } catch (error) {
         return error

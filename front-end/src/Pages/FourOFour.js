@@ -1,16 +1,17 @@
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
+import "../Css/FourOFour.css";
 
 export default function FourOFour() {
   return (
-    <div>
-        
-        <h1>Sorry, the game you chose can not be found at this time!</h1>
+    <div className="container-two">
+      <div className="back-home">
+        <h1>Back Home</h1>
         <button>
-            <Link to="/games">
-            Back To List Of Games
-            </Link>
+          <Link to="/games" style={{ color: "black", textDecoration: "none" }}>
+            Back To Index Page
+          </Link>
         </button>
-        
-        </div>
-  )
+      </div>
+    </div>
+  );
 }

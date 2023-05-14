@@ -6,6 +6,7 @@ CREATE DATABASE video_games;
 
 CREATE TABLE games (
     id SERIAL PRIMARY KEY,
+    img VARCHAR,
     rated TEXT,
     title VARCHAR,
     genre TEXT,

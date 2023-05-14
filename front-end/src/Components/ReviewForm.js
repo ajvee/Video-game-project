@@ -1,116 +1,111 @@
 import { useState, useEffect} from "react"
 import { useParams } from "react-router-dom"
 
-
 export default function ReviewForm(props) {
-const {id} = useParams()
-const {reviewDetails} = props
+  const { id } = useParams();
 
-const [review, setReview] = useState({
-    id: "",
+  const [review, setReview] = useState({
     content: "",
     title: "",
     user_score: "",
-    reviewer: "" ,
+    reviewer: "",
     game_id: id,
-})
+  })
 
-const handleTextChange = (event) => {
+  useEffect(() => {
+    if (props.reviewDetails) {
+      setReview(props.reviewDetails)
+    }
+  }, [id, props.reviewDetails])
+
+  const handleTextChange = (event) => {
     setReview({...review, [event.target.id]: event.target.value})
-}
+  }
 
-useEffect(() => {
-    if (reviewDetails){
-        setReview(reviewDetails)
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    console.log("Form submitted!");
+
+    if (props.handleAdd) {
+      props.handleAdd(review);
+    } else if (props.handleEdit) {
+      props.handleEdit(review);
     }
-}, [id, reviewDetails, props])
 
-
-const handleSubmit = (event) => {
-    event.preventDefault()
-    props.handleEdit(review, id)
-
-    if (reviewDetails) {
-        //toggles the edit
-        props.toggleView()
+    if (props.toggleView) {
+      props.toggleView();
     }
+
     setReview({
-    id: "",
-    content: "",
-    title: "",
-    user_score: "",
-    reviewer: "" ,
-    game_id: id,
+      content: "",
+      title: "",
+      user_score: "",
+      reviewer: "",
+      game_id: id,
     })
-}
+  }
 
-
-
-
-console.log(props.review)
   return (
-    // <>
     <div>
-    {props.children}
-  <form onSubmit={handleSubmit}>
-      <div class="form-group">
-    <label htmlfor="reviewer">Name: </label>
-    <input 
-    id="reviewer" 
-    type="text" 
-    value={review.reviewer} 
-    onChange={handleTextChange} 
-    placeholder="Your name"
-    class="form-control" 
-    required
-    />
-    </div>
+      {props.children}
+      <form onSubmit={handleSubmit}>
+        <div className="form-group">
+          <label htmlFor="reviewer">Name: </label>
+          <input 
+            id="reviewer" 
+            type="text" 
+            value={review.reviewer} 
+            onChange={handleTextChange} 
+            placeholder="Your name"
+            className="form-control" 
+            required
+          />
+        </div>
 
-    <div class="form-group">
-    <label htmlfor="title">Title: </label>
-    <input 
-    id="title" 
-    type="text" 
-    value={review.title} 
-    onChange={handleTextChange} 
-    placeholder="Name of game"
-    class="form-control" 
-    required
-    />
-    </div>
+        <div className="form-group">
+          <label htmlFor="title">Title: </label>
+          <input 
+            id="title" 
+            type="text" 
+            value={review.title} 
+            onChange={handleTextChange} 
+            placeholder="Name of game"
+            className="form-control" 
+            required
+          />
+        </div>
 
-    <div class="form-group">
-    <label htmlfor="user_score">Score: </label>
-    <input 
-    id="user_score" 
-    type="number" 
-    name="rating"
-    min="0"
-    max="100"
-    placeholder="Please rate from 0-100"
-    value={review.user_score} 
-    onChange={handleTextChange} 
-    class="form-control" 
-    required
-    />
-  </div>
+        <div className="form-group">
+          <label htmlFor="user_score">Score: </label>
+          <input 
+            id="user_score" 
+            type="number" 
+            name="rating"
+            min="0"
+            max="100"
+            placeholder="Please rate from 0-100"
+            value={review.user_score} 
+            onChange={handleTextChange} 
+            className="form-control" 
+            required
+          />
+        </div>
 
-  <div class="form-group">
-    <label htmlfor="content">Review: </label>
-    <input 
-    id="content" 
-    type="text" 
-    value={review.content} 
-    onChange={handleTextChange} 
-    placeholder="Your thoughts"
-    class="form-control" 
-    required
-    />
-  </div>
+        <div className="form-group">
+          <label htmlFor="content">Review: </label>
+          <input 
+            id="content" 
+            type="text" 
+            value={review.content} 
+            onChange={handleTextChange} 
+            placeholder="Your thoughts"
+            className="form-control" 
+            required
+          />
+        </div>
   
-  <input type="submit" />
-    </form>
+        <input type="submit" />
+      </form>
     </div>
-    // </>
   )
 }

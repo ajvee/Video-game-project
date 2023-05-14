@@ -1,6 +1,6 @@
 import axios from "axios"
 import { useState } from "react"
-import { useNavigate, Link } from "react-router-dom"
+import { useNavigate, Link  } from "react-router-dom"
 
 const API = process.env.REACT_APP_API_URL
 
@@ -49,7 +49,7 @@ const handleSubmit = (event) => {
     type="text" 
     value={game.title} 
     onChange={handleTextChange} 
-    placeholder=""
+    placeholder="Name of game"
     class="form-control" 
     required
     />
@@ -63,7 +63,7 @@ const handleSubmit = (event) => {
     type="text" 
     value={game.rated} 
     onChange={handleTextChange} 
-    placeholder=""
+    placeholder="Rated E/E10+/T/M/A"
     class="form-control" 
     required
     />
@@ -76,7 +76,7 @@ const handleSubmit = (event) => {
     type="text" 
     value={game.genre} 
     onChange={handleTextChange} 
-    placeholder=""
+    placeholder="What genre"
     class="form-control" 
     required
     />
@@ -90,7 +90,7 @@ const handleSubmit = (event) => {
     type="text" 
     value={game.platform} 
     onChange={handleTextChange} 
-    placeholder=""
+    placeholder="What game console"
     class="form-control" 
     required
     />
@@ -104,7 +104,7 @@ const handleSubmit = (event) => {
     type="text" 
     value={game.release_date} 
     onChange={handleTextChange}
-    placeholder="" 
+    placeholder="Year" 
     class="form-control" 
     required
     />
@@ -112,12 +112,13 @@ const handleSubmit = (event) => {
 
 
   <div class="form-group">
-    <label for="game_content">Game Content: </label>
+    <label for="game_content">Game Description: </label>
     <input 
     id="game_content" 
     type="text" 
     value={game.game_content} 
     onChange={handleTextChange} 
+    placeholder="Description of game"
     class="form-control" 
     required
     />
@@ -131,6 +132,7 @@ const handleSubmit = (event) => {
     type="number" 
     value={game.score} 
     onChange={handleTextChange} 
+    placeholder="Rating from 0-100"
     class="form-control" 
     required
     />

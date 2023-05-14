@@ -1,0 +1,20 @@
+.container-two {
+    background-image: url('https://www.bypeople.com/wp-content/uploads/2016/03/mario-404-page.jpg');
+    background-size: cover;
+    background-position: center bottom;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+  
+  .back-home {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+  

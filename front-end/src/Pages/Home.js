@@ -23,7 +23,9 @@ export default function Home() {
           <div className='angel'>
            <h2>Angel V.</h2>
               <img src={Angel} alt="Angel-img" width={150}></img>
+              <br></br>
               <a className="git" href='https://github.com/ajvee'>Github</a>
+              <br></br>
               <a className="linked" href="https://www.linkedin.com/in/angeljvilla/"> LinkedIn </a>     
           </div>
                   
