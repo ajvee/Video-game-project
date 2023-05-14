@@ -37,7 +37,7 @@ function Games() {
             <th className="Games-header">ESRB Rating</th>
             <th className="Games-header">Platform</th>
             <th className="Games-header">Year Released</th>
-            <th className="Games-header">Game Score</th>
+            {/* <th className="Games-header">Game Score</th> */}
           </tr>
         </thead>
         <tbody>
