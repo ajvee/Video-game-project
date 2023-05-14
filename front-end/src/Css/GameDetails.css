@@ -11,3 +11,7 @@ a.details {
 div.showNavigation button{
 justify-content: space-around;
 }
+
+img.gameImg {
+    border-radius: 20px;
+}
