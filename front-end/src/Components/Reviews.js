@@ -32,8 +32,8 @@ export default function Reviews() {
             .catch((err) => console.warn("catch", err))
     };
 
-    const handleDelete = (id) => {
-        axios.delete(`${API}/games/${id}/reviews/${id}`)
+    const handleDelete = (reviewId) => {
+        axios.delete(`${API}/games/${id}/reviews/${reviewId}`)
             .then((res) => {
                 const copyReviewArray = [...reviews];
                 const indexDeletedReview = copyReviewArray.findIndex((review) => {
@@ -47,7 +47,7 @@ export default function Reviews() {
             .catch((err) => console.warn("catch", err))
     };
 
-    const handleEdit = (updatedReview) => {
+    const handleSubmit = (updatedReview) => {
         axios.put(`${API}/games/${id}/reviews/${updatedReview.id}`, updatedReview)
             .then((res) => {
                 const copyReviewArray = [...reviews];
@@ -84,7 +84,7 @@ export default function Reviews() {
                         key={review.id}
                         review={review}
                         handleDelete={handleDelete}
-                        handleSubmit={handleEdit} />
+                        handleSubmit={handleSubmit} />
                 })
             }
         </section>
