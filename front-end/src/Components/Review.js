@@ -24,10 +24,12 @@ export default function Review({ review, handleDelete, handleEdit }) {
 
     return (
         <div className="Review">
-            
+            <br></br>
             <br></br>
             <br></br>
             <button onClick={toggleView}>Edit this review...</button>
+            <br></br>
+            <br></br>
             {viewEditFrom ?
                 (
                     <ReviewForm
@@ -36,9 +38,9 @@ export default function Review({ review, handleDelete, handleEdit }) {
                         handleEdit={handleEdit} />
                 ) : (
                     <div>
+                        <h4>{review.reviewer}</h4>
                         <h4>{review.title}</h4>
                         <h4>Score - <span style={{ color: getColor(review.user_score) }}>{review.user_score}</span></h4>
-                        <h5>{review.reviewer}</h5>
                         <p>{review.content}</p>
                         <button onClick={() => handleDelete(review.id)}>Delete</button>
                     </div>

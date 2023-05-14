@@ -2,6 +2,7 @@ import axios from "axios"
 import { useEffect, useState } from "react"
 import { Link, useParams, useNavigate } from "react-router-dom"
 import Reviews from "./Reviews"
+// import ModalDelete from "./ModalDelete"
 
 const API = process.env.REACT_APP_API_URL
 
@@ -60,14 +61,17 @@ function getColor(score) {
         
         {game && (
         <div className="details">
-        <h2>{game.title} </h2>
+        <h1>{game.title} </h1>
         <br></br>
-        <h3>MetaScore: <span style={{ color: getColor(game.score) }}>{game.score}</span></h3>
+        <h2>MetaScore - <span style={{ color: getColor(game.score) }}>{game.score}</span></h2>
+          <div><img className="gameImg" src={game.img} width={500}></img></div>
+        <br></br>
       <h4>Genre: {game.genre}</h4>
       <h4>Rated: {game.rated}</h4>
       <h4>Platform: {game.platform}</h4>
       <h4>Released in: {game.release_date}</h4>
       <br></br>
+      <h4>Content:</h4>
       <p>{game.game_content}</p>
             </div>
         )}
@@ -87,13 +91,7 @@ function getColor(score) {
           <button onClick={handleDelete}>Delete</button>
         </div>
 
-        <div>
-        
-        </div>
-
-        <div>
-          
-        </div>
+      {/* <ModalDelete /> */}
         
     </div>
  <Reviews /> 
