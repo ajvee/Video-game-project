@@ -15,6 +15,7 @@ function getColor(score) {
 function Game({ game }) {
   return (
     <tr>
+
       <td className="score"><span style={{ color: getColor(game.score) }}>{game.score}</span></td>
       <td className="title">
         <Link to={`/games/${game.id}`}

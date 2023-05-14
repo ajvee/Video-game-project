@@ -1,6 +1,6 @@
 import axios from "axios"
 import { useState } from "react"
-import { useNavigate, Link } from "react-router-dom"
+import { useNavigate, Link  } from "react-router-dom"
 
 const API = process.env.REACT_APP_API_URL
 
@@ -112,7 +112,7 @@ const handleSubmit = (event) => {
 
 
   <div class="form-group">
-    <label for="game_content">Game Content: </label>
+    <label for="game_content">Game Description: </label>
     <input 
     id="game_content" 
     type="text" 

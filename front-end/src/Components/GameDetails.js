@@ -8,7 +8,7 @@ const API = process.env.REACT_APP_API_URL
 
 export default function GameDetails() {
 
-const [game, setGame] = useState()
+const [game, setGame] = useState([])
 const {id} = useParams()
 let navigate = useNavigate()
 
@@ -17,7 +17,6 @@ useEffect(() => {
     axios
     .get(`${API}/games/${id}`)
     .then((response) => {
-        // console.log(response.data)
         setGame(response.data)
     }).catch((e) => {
         console.warn("catch", e)
@@ -33,7 +32,9 @@ const deleteGame = () => {
      (error) => console.error(error)
     )
     .catch((c) => console.warn("catch", c))
+  
 }
+
 
 //handling the delete
 const handleDelete = () => {
