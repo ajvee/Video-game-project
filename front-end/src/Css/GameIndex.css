@@ -86,4 +86,33 @@
   color: blue
 }
 
+/* Styles for screens with a width of 768px or less */
+@media (max-width: 768px) {
+  .Games {
+    width: 100%;
+    border: none;
+    box-shadow: none;
+  }
+  
+  .Games td {
+    border: none;
+    padding: 0;
+  }
+  
+  .Games-header {
+    border: none;
+  }
+  
+  .Game-details {
+    border: none;
+    border-top: 1px solid #ccc;
+    border-radius: 0;
+  }
+  
+  .Game-image {
+    max-width: 100%;
+  }
+}
+
+
 

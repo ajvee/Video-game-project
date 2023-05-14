@@ -1,9 +1,9 @@
 import axios from "axios";
-
 import { useState, useEffect } from "react";
 import Game from "./Game";
 import Footer from "./Footer";
 import "../Css/GameIndex.css"
+
 const API = process.env.REACT_APP_API_URL;
 
 
