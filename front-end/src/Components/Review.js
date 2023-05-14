@@ -13,7 +13,7 @@ function getColor(score) {
     return color;
 }
   
-export default function Review({ review, handleDelete, handleEdit }) {
+export default function Review({ review, handleDelete, handleSubmit }) {
     const [viewEditFrom, toggleEditForm] = useState(false);
 
     const toggleView = () => {
@@ -35,7 +35,7 @@ export default function Review({ review, handleDelete, handleEdit }) {
                     <ReviewForm
                         reviewDetails={review}
                         toggleView={toggleView}
-                        handleEdit={handleEdit} />
+                        handleEdit={handleSubmit} />
                 ) : (
                     <div>
                         <h4>{review.reviewer}</h4>
