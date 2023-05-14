@@ -87,11 +87,8 @@ function getColor(score) {
            <Link to={`/games/${id}/edit`}>
           <button>Edit</button>
           </Link>
-
-          <button onClick={handleDelete}>Delete</button>
+          <ModalDelete handleDelete={handleDelete} />        
         </div>
-
-        <ModalDelete handleDelete={handleDelete} />        
     </div>
  <Reviews /> 
   </article> 
