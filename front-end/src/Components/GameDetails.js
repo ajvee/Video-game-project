@@ -64,7 +64,7 @@ function getColor(score) {
         <h1>{game.title} </h1>
         <br></br>
         <h2>MetaScore - <span style={{ color: getColor(game.score) }}>{game.score}</span></h2>
-          <div><img className="gameImg" src={game.img} width={500}></img></div>
+          <div><img className="gameImg" alt="GameCover" src={game.img} width={500}></img></div>
         <br></br>
       <h4>Genre: {game.genre}</h4>
       <h4>Rated: {game.rated}</h4>
