@@ -1,25 +1,15 @@
 import axios from "axios";
-
 import { useState, useEffect } from "react";
 import Game from "./Game";
 import Footer from "./Footer";
 import "../Css/GameIndex.css"
+
 const API = process.env.REACT_APP_API_URL;
 
 
 function Games() {
   const [games, setGames] = useState([]);
 
-  // useEffect(() => {
-  //   fetch(`${process.env.REACT_APP_API_URL}/games`)
-  //     .then((response) => response.json())
-  //     .then((data) => {
-  //       setGames(data);
-  //     })
-  //     .catch((error) => {
-  //       console.log(error);
-  //     });
-  // }, []);
   useEffect(() => {
     axios.get(`${API}/games`)
       .then((response) => setGames(response.data))
@@ -37,7 +27,6 @@ function Games() {
             <th className="Games-header">ESRB Rating</th>
             <th className="Games-header">Platform</th>
             <th className="Games-header">Year Released</th>
-            {/* <th className="Games-header">Game Score</th> */}
           </tr>
         </thead>
         <tbody>

@@ -1,0 +1,132 @@
+/* Colors */
+:root {
+  --primary-color: #1A1A1A;
+  --secondary-color: #FAFAFA;
+  --accent-color: #4D4D4D;
+  --text-color: #FFFFFF;
+}
+
+/* Typography */
+.modal body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--text-color);
+}
+
+.modal h1,
+.modal h2,
+.modal h3,
+.modal h4,
+.modal h5,
+.modal h6 {
+  font-weight: bold;
+  margin: 0 0 1rem;
+}
+
+.modal h1 {
+  font-size: 3rem;
+}
+
+.modal h2 {
+  font-size: 2.5rem;
+}
+
+.modal h3 {
+  font-size: 2rem;
+}
+
+/* Buttons */
+.modal button {
+  border: none;
+  padding: 1rem 2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+
+.modal button.primary {
+  background-color: var(--primary-color);
+  color: var(--text-color);
+}
+
+.modal button.secondary {
+  background-color: var(--secondary-color);
+  color: var(--text-color);
+}
+
+.modal button.accent {
+  background-color: var(--accent-color);
+  color: var(--text-color);
+}
+
+/* Cards */
+.modal .card {
+  background-color: var(--secondary-color);
+  color: var(--text-color);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease-in-out;
+}
+
+.modal .card:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.modal .card-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0 0 1rem;
+}
+
+.modal .card-text {
+  margin: 0;
+}
+
+/* Forms */
+.modal form {
+  display: flex;
+  flex-direction: column;
+}
+
+.modal input,
+.modal select {
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border: none;
+  border-radius: 4px;
+  background-color: var(--secondary-color);
+  color: var(--text-color);
+}
+
+.modal input:focus,
+.modal select:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--accent-color);
+}
+
+.modal label {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+/* Modals */
+.modal .modal-header {
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  border-bottom: none;
+}
+
+.modal .modal-footer {
+  background-color: var(--secondary-color);
+  border-top: none;
+}
+
+.modal .modal-footer button {
+  margin-right: 0.5rem;
+}
+
+.modal .delete-message {
+  color: black;
+}

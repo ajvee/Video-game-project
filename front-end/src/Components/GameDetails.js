@@ -2,7 +2,7 @@ import axios from "axios"
 import { useEffect, useState } from "react"
 import { Link, useParams, useNavigate } from "react-router-dom"
 import Reviews from "./Reviews"
-// import ModalDelete from "./ModalDelete"
+import ModalDelete from "./ModalDelete"
 
 const API = process.env.REACT_APP_API_URL
 
@@ -87,12 +87,8 @@ function getColor(score) {
            <Link to={`/games/${id}/edit`}>
           <button>Edit</button>
           </Link>
-
-          <button onClick={handleDelete}>Delete</button>
+          <ModalDelete handleDelete={handleDelete} />        
         </div>
-
-      {/* <ModalDelete /> */}
-        
     </div>
  <Reviews /> 
   </article> 
@@ -100,35 +96,3 @@ function getColor(score) {
  
 }
 
-//BOOTSTRAP?
-/* <div class="card" style="width:400px"  >
-    {/* <img class="card-img-top" src="img_avatar1.png" alt="Card image"> */
-    // <div class="card-body">
-    //   <h2 class="card-title"> {game.title} </h2>
-    //   <h3> {game.score}</h3>
-    //   <h4> {game.rated} </h4>
-    //   <h4>{game.genre} </h4>
-    //   <h4> {game.platform} </h4>
-    //   <h4> {game.release_date} </h4>
-    //   <p class="card-text">{game.game_content}</p> 
-      /* <a href="#" class="btn btn-primary">See Profile</a> */
-      /* <div>
-        
-          <Link to={`/games`} >
-          <button>Back</button>
-          </Link>
-        </div>
-
-        <div>
-          <Link to={`/games/${id}/edit`}>
-          <button>Edit</button>
-          </Link>
-        </div>
-
-        <div>
-          <button onClick={handleDelete}>Delete</button>
-        </div>
-    </div> */
-    
-    /* <Reviews /> */
-  /* </div> */
